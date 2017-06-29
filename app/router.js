@@ -7,7 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('me', { path: '*anything' });
+  this.route('me', { path: '/' }, function() {
+    this.route('catcher', { path: '*anything' });
+  });
 });
 
 export default Router;
